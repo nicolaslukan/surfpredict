@@ -11,6 +11,7 @@
 <body>
 
 
+
 <table border="0">
     <tr>
         <td><select id="ability">
@@ -21,18 +22,32 @@
             Surfer ability</td>
     </tr>
     <tr>
-        <td><select id="chiefed">
-            <option value="sober">sober</option>
-            <option value="half-baked">half-baked</option>
-            <option value="zooted">zooted</option>
+        <td><select id="age">
+            <option value="young">5-20</option>
+            <option value="medium">20-40</option>
+            <option value="old">40+</option>
         </select>
-            Based Level</td></td>
+            Surfer age</td>
     </tr>
     <tr>
+        <td><input type="text" id="name"></textarea><br>Surf Spot</td>
+        </tr>
+    <tr>
+        <td><input type="text" id="height"></textarea><br>Wave Height</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="Wind"></textarea><br>Wind Speed</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="direction"></textarea><br>Wind Direction(onshore)</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="gnar"></textarea><br>Gnar Level, out of 10</td>
+    </tr>
 </table>
 <div id="homeslice">
-        <button onclick= Location()  type="button" class="btn btn-primary btn-lg">Where should I surf</button>
-        <button onclick= board() type="button" class="btn btn-success btn-lg">What board should I ride</button>
+        <button onclick= chooseSurfer()  type="button" class="btn btn-primary btn-lg">Should I surf here</button>
+        <button onclick= chooseBoard() type="button" class="btn btn-success btn-lg">If Do, what board should I use</button>
 </div>
 
 
