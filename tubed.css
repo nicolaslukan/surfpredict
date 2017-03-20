@@ -3,3 +3,13 @@ body {
     background: #00ff00 url("http://viewfromabluemoon.com/wp-content/uploads/2015/10/04.jpg");
     background-position: 50% 25%;
 }
+td{
+    vertical-align: top;
+}
+#board {
+
+    display: none;
+}
+.floatedTable{
+    float: left;
+}

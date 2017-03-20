@@ -12,7 +12,7 @@
 
 
 
-<table border="0">
+<table border="0" class="floatedTable">
     <tr>
         <td><select id="ability">
             <option value="beginner">beginner</option>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <td><input type="text" id="name"></textarea><br>Surf Spot</td>
-        </tr>
+    </tr>
     <tr>
         <td><input type="text" id="height"></textarea><br>Wave Height</td>
     </tr>
@@ -39,19 +39,54 @@
         <td><input type="text" id="Wind"></textarea><br>Wind Speed</td>
     </tr>
     <tr>
-        <td><input type="text" id="direction"></textarea><br>Wind Direction(onshore)</td>
+        <<td><select id="Direction">
+        <option value="onshore">onshore</option>
+        <option value="offshore">offshore</option>
+    </select>
+        Wind direction</td>
+    </tr>
+
+
+</table>
+
+<div id="homeslice">
+    <button onclick= chooseSurfer()  type="button" class="btn btn-primary btn-lg">Should I surf here</button>
+    <button onclick= chooseBoard() type="button" class="btn btn-success btn-lg">If Do, what board should I use</button>
+    <button onclick= show() type="button" class="btn btn-danger btn-lg">Add board</button>
+    <button onclick= saveBoard() type="button" class="btn btn-warning btn-lg">Save board</button>
+
+</div>
+<table id="board" class="floatedTable">
+    <tr>
+        <td><input type="text" id="boardHeight"></textarea><br>Board Height</td>
     </tr>
     <tr>
-        <td><input type="text" id="gnar"></textarea><br>Gnar Level, out of 10</td>
+        <td><select id="numFins">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+            Number of fins</td>
     </tr>
+    <tr>
+        <<td><select id="type">
+        <option value="shortboard">shortboard</option>
+        <option value="longboard">longboard</option>
+        <option value="tweener">tweener</option>
+    </select>
+        Type of Board</td>
+    </tr>
+
+
+
+
 </table>
-<div id="homeslice">
-        <button onclick= chooseSurfer()  type="button" class="btn btn-primary btn-lg">Should I surf here</button>
-        <button onclick= chooseBoard() type="button" class="btn btn-success btn-lg">If Do, what board should I use</button>
-</div>
 
 
-<div id="output"></div>
+<div id = "output"></div>
+
 
 
 
