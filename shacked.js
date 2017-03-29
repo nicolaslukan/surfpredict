@@ -31,15 +31,16 @@ function Quiver(height,type,numFins){
 }
 
 function saveBoard() {
-    var  typeofboard = document.getElementById("type").innerHTML
-     var boardheight = document.getElementById("boardHeight").innerHTML
-     var numfins = document.getElementById("numFins").innerHTML
+    var  typeofboard = document.getElementById("type").value
+     var boardheight = document.getElementById("boardHeight").value
+     var numfins = document.getElementById("numFins").value
 
     //grab board info from page
 
     board = new Quiver(boardheight,typeofboard,numfins)
     surfer.addBoard(board);
     console.log(surfer);
+    console.log(board)
 
 
 }
@@ -74,7 +75,7 @@ function chooseSurfer(){
 
     if(surfer.ability == "expert" && surfer.age == "young") {
         if (surfspot.height < 4 || (surfspot.wind > 15 && surfspot.direction == "onshore")) {
-            document.getElementById("output").innerHTML = "You can handle it at " + surfspot.name  + ", but might not be great surfing for a yougun"
+            document.getElementById("output").innerHTML = "You can handle it at " + surfspot.name  + ", but might not be great surfing for a young gun"
         }
         else if (surfspot.height >= 8 && (surfspot.wind > 5 && surfspot.direction == "onshore")){
             document.getElementById("output").innerHTML = "The surf out at " + surfspot.name + " is alright, might as well get a sesh in while your still a grom"
@@ -203,8 +204,70 @@ function chooseSurfer(){
 }
 
 function chooseBoard(){
+        if(surfspot.height < 3){
+            for(i=0; i < surfer.surfboard.length; i++){
+            if(surfer.surfboard[i].type == "longboard" && surfer.surfboard[i].numFins == 1){
+                document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                return "";
+            }
+            else if(surfer.surfboard[i].type == "longboard"){
+                document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                return "";
+            }
+            else if(surfer.surfboard[i].type == "tweener"){
+                document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                return "";
+            }
+            else if(surfer.surfboard[i].type == "shortboard"){
+                document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                return "";
+            }
 
 }
+    }
+    else if(surfspot.height >= 3 && surfspot.height < 5) {
+            for (i = 0; i < surfer.surfboard.length; i++) {
+                if (surfer.surfboard[i].type == "tweener" && surfer.surfboard[i].numFins == 4) {
+                    document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                    return "";
+                }
+                else if (surfer.surfboard[i].type == "tweener") {
+                    document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                    return "";
+                }
+                else if (surfer.surfboard[i].type == "longboard") {
+                    document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                    return "";
+                }
+                else if (surfer.surfboard[i].type == "shortboard") {
+                    document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                    return "";
+                }
+            }
+        }
+        else
+            if (surfspot.height >= 5) {
+                for (i = 0; i < surfer.surfboard.length; i++) {
+                    if (surfer.surfboard[i].type == "shortboard" && surfer.surfboard[i].numFins == 3) {
+                        document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                        return "";
+                    }
+                    else if (surfer.surfboard[i].type == "shortboard") {
+                        document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                        return "";
+                    }
+                    else if (surfer.surfboard[i].type == "tweener") {
+                        document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                        return "";
+                    }
+                    else if (surfer.surfboard[i].type == "longboard") {
+                        document.getElementById("output").innerHTML = "You should use your" + surfer.surfboard[i].type + " with " + surfer.surfboard[i].numFins + " fins";
+                        return "";
+                    }
+                }
+
+            }
+        }
 function show() {
     document.getElementById("board").style.display="block";
 }
